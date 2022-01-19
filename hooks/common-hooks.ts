@@ -1,5 +1,5 @@
 import { CustomWorld } from '../world';
-import { Before, BeforeAll, AfterAll } from '@cucumber/cucumber';
+import { Before, BeforeAll, After } from '@cucumber/cucumber';
 
 Before({ tags: '@ignore' }, async function () {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -15,7 +15,8 @@ BeforeAll(async function () {
   console.log('Before All');
 });
 
-AfterAll(async function () {
+After(async function (this: CustomWorld)  {
   // eslint-disable-next-line no-console
-  console.log('After All');
+  console.log('After');
+  this.driver.quit();
 });

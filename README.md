@@ -4,12 +4,17 @@
 - run the command `npm install`.
 
 ## To execute the tests locally
-- Expose ./drivers into path `export PATH=$PATH:[PATH_TO_PROJECT]/drivers`
+** Important: ** Included drivers in `./drivers` are for MacOS Intel CPU, you might need to download different drivers if using different OS or arch.
+- Expose `./drivers` into path `export PATH=$PATH:[PATH_TO_PROJECT]/drivers`
   - It might be that you'll need to update these drivers if using more recent versions Chrome or Firefox, just download them and place them on the drivers folder and it should work.
-(During development chromedriver 97.0.4692.71 was used with a compatible Chrome 97 build)
+(During development chromedriver 97.0.4692.71 was used with a compatible Chrome 97 build and Geckodriver v 0.30.0 with Firefox 96.0.1)
 
 - run the command `npm test`.
 
+### Chosing Browser ###
+`export browser=[chrome|firefox]`
+Can also edit `set-enviroment-variables.ts` for development.
+The code defaults to Chrome.
 ## To choose a reporter
 
 The last reporter/formatter found on the cucumber-js command-line wins:

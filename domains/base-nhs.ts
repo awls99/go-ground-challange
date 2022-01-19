@@ -1,11 +1,13 @@
 import { WebDriver } from "selenium-webdriver";
 import * as webdriver from "selenium-webdriver";
 
+export const browserName = process.env.browser?.toLocaleLowerCase() || "chrome";
+
 export abstract class BaseNHS {
   driver: WebDriver;
   session: webdriver.Session | undefined;
   constructor(driver?: WebDriver) {
-    this.driver = driver || new webdriver.Builder().forBrowser('chrome').build();
+    this.driver = driver || new webdriver.Builder().forBrowser(browserName).build();
   }
   async startSession() {
     if (this.session) {

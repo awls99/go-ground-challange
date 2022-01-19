@@ -1,6 +1,7 @@
 import { setWorldConstructor } from '@cucumber/cucumber';
 import * as webdriver from "selenium-webdriver";
 import { Stream } from 'stream';
+import { browserName } from '../domains/base-nhs';
 
 export type MediaType = 'text/plain' | 'image/png' | 'application/json';
 export type AttachBuffer = (data: Buffer, mediaType: MediaType) => void | Promise<void>;
@@ -26,7 +27,7 @@ export class CustomWorld {
   public attach: AttachFn;
   public foo = false;
   public debug = false;
-  public driver = new webdriver.Builder().forBrowser('chrome').build();
+  public driver = new webdriver.Builder().forBrowser(browserName).build();
 
   /**
    *
