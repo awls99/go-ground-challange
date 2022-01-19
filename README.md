@@ -1,15 +1,12 @@
-# cucumber7-ts-starter
-
-[![Build Status](https://travis-ci.org/hdorgeval/cucumber7-ts-starter.svg?branch=main)](https://travis-ci.org/hdorgeval/cucumber7-ts-starter)
-[![Build status](https://ci.appveyor.com/api/projects/status/v7ing1c5m9fr0fjf?svg=true)](https://ci.appveyor.com/project/hdorgeval/cucumber7-ts-starter)
-
-Starter project to write and debug cucumber-js v7 features in TypeScript language
 
 ## After cloning the repo
 
 - run the command `npm install`.
 
 ## To execute the tests locally
+- Expose ./drivers into path `export PATH=$PATH:[PATH_TO_PROJECT]/drivers`
+  - It might be that you'll need to update these drivers if using more recent versions Chrome or Firefox, just download them and place them on the drivers folder and it should work.
+(During development chromedriver 97.0.4692.71 was used with a compatible Chrome 97 build)
 
 - run the command `npm test`.
 

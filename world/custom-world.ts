@@ -1,5 +1,5 @@
-import { SimpleMathsCalculator } from '../domains/simple-maths/simple-maths-calculator';
 import { setWorldConstructor } from '@cucumber/cucumber';
+import * as webdriver from "selenium-webdriver";
 import { Stream } from 'stream';
 
 export type MediaType = 'text/plain' | 'image/png' | 'application/json';
@@ -24,9 +24,9 @@ export interface CucumberWorldConstructorParams {
 
 export class CustomWorld {
   public attach: AttachFn;
-  public calculator: SimpleMathsCalculator = new SimpleMathsCalculator();
   public foo = false;
   public debug = false;
+  public driver = new webdriver.Builder().forBrowser('chrome').build();
 
   /**
    *
